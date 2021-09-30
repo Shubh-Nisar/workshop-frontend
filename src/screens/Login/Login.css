@@ -1,13 +1,3 @@
-.Login-Container {
-  width: 50%;
-  height: 100vh;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  align-self: center;
-}
-
 .Login-Title > h1 {
   margin: 12px auto 24px auto !important;
   padding: 0;

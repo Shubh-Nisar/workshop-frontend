@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 
 const Login = (props) => {
   return (
-    <div className="Signup-Container">
+    <div className="Container">
       <div className="Signup-Form">
         <div className="Signup-Title">
           <h1>Sign-Up</h1>

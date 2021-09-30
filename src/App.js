@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 // Screens
-import Home from "./screens/Home";
+import Home from "./screens/Home/Home";
 import Login from "./screens/Login/Login";
 import Signup from "./screens/Signup/Signup";
 

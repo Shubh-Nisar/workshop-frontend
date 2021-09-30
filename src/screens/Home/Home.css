@@ -1,0 +1,11 @@
+.Home-Flex-Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+}
+
+.Home-Btn {
+  margin: 24px;
+}
