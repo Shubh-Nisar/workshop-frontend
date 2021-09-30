@@ -3,9 +3,8 @@ import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 // Screens
 import Home from "./screens/Home";
-
-// Components
 import Login from "./screens/Login/Login";
+import Signup from "./screens/Signup/Signup";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,6 +13,7 @@ const App = () => {
     <Router>
       <Switch>
         <Route component={Login} path="/login" />
+        <Route component={Signup} path="/signup" />
         <Route component={Home} path="/" />
       </Switch>
     </Router>
