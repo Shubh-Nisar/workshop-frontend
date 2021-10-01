@@ -1,0 +1,10 @@
+.BlogCard-Container {
+  margin: 20px auto;
+}
+
+.BlogCard-Name {
+  text-align: right;
+  font-style: italic;
+  padding: 0;
+  margin: 0;
+}

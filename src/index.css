@@ -21,3 +21,9 @@ code {
   justify-self: center;
   align-self: center;
 }
+
+@media (max-width: 768px) {
+  .Container {
+    width: 80%;
+  }
+}
