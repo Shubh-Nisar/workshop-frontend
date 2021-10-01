@@ -1,0 +1,12 @@
+.AddBlog-Title > h1 {
+  margin: 12px auto 24px auto !important;
+  padding: 0;
+  text-align: center;
+}
+
+.AddBlog-Form {
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 24px;
+  margin: auto 12px;
+}
