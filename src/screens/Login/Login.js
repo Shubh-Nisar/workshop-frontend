@@ -1,5 +1,6 @@
 import React from "react";
 import "./Login.css";
+import { Link } from 'react-router-dom';
 
 // BTS
 import Form from "react-bootstrap/Form";
@@ -7,7 +8,7 @@ import Button from "react-bootstrap/Button";
 
 const Login = (props) => {
   return (
-    <div className="Container">
+    <div className="Login-Container">
       <div className="Login-Form">
         <div className="Login-Title">
           <h1>Login</h1>
@@ -30,6 +31,9 @@ const Login = (props) => {
           </Button>
         </Form>
       </div>
+      <small>
+        Don't have an account? <Link to="/signup">SignUp</Link>
+      </small>
     </div>
   );
 };

@@ -8,5 +8,17 @@
   border: 1px solid #ced4da;
   border-radius: 8px;
   padding: 24px;
-  margin: auto 12px;
+  width: 100%;
+}
+
+.Login-Container {
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
 }
