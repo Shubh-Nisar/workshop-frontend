@@ -1,3 +1,13 @@
 .Blog-Title {
   margin: 12px auto;
 }
+
+.Blog-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+
+.Blog-Container {
+  margin-top: 2.6rem;
+}

@@ -3,7 +3,7 @@ import "./BlogCard.css";
 
 // BTS
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 const BlogCard = (props) => {
   return (
