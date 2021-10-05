@@ -1,13 +1,13 @@
 import React from "react";
 import "./Blog.css";
-import Button from 'react-bootstrap/Button';
-import { useHistory } from 'react-router-dom';
+import Button from "react-bootstrap/Button";
+import { useHistory } from "react-router-dom";
 
 // Components
 import BlogCard from "../../components/Blog/BlogCard";
 
 const Blog = (props) => {
-  const history = useHistory()
+  const history = useHistory();
 
   return (
     <div className="Container Blog-Container">
@@ -18,7 +18,13 @@ const Blog = (props) => {
         <BlogCard />
         <BlogCard />
       </div>
-      <Button className="Blog-button" variant="primary" onClick={() => history.push('/add-blog')}>Add Blog</Button>
+      <Button
+        className="Blog-button"
+        variant="primary"
+        onClick={() => history.push("/add-blog")}
+      >
+        Add Blog
+      </Button>
     </div>
   );
 };

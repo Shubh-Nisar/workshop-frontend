@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // BTS
 import Form from "react-bootstrap/Form";
@@ -8,22 +8,22 @@ import Button from "react-bootstrap/Button";
 
 const Login = (props) => {
   const [values, setValues] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     setValues({
       ...values,
       [name]: value,
-    })
+    });
   };
 
   const handleSubmit = () => {
-    console.log('submit');
-  }
+    console.log("submit");
+  };
 
   return (
     <div className="Login-Container">
@@ -34,7 +34,14 @@ const Login = (props) => {
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name='email' value={values.email} onChange={handleChange} required/>
+            <Form.Control
+              type="email"
+              placeholder="Enter email"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+              required
+            />
             <Form.Text className="text-muted">
               We'll never share your email with anyone else.
             </Form.Text>
@@ -42,14 +49,21 @@ const Login = (props) => {
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" name="password" value={values.password} onChange={handleChange} required/>
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={values.password}
+              onChange={handleChange}
+              required
+            />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
           </Button>
         </Form>
       </div>
-      <small>
+      <small className="mt-2 text-start container-fluid">
         Don't have an account? <Link to="/signup">SignUp</Link>
       </small>
     </div>

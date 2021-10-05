@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // BTS
 import Form from "react-bootstrap/Form";
@@ -15,34 +15,33 @@ const Signup = (props) => {
   });
   // const [error, setError] = useState(' ');
 
-  const Register = async() => {
+  const Register = async () => {
     try {
       const data = JSON.stringify(values);
-  
+
       const config = {
-        method: 'post',
-        url: 'https://simple-blog-site-workshop.herokuapp.com/users/sig',
+        method: "post",
+        url: "https://simple-blog-site-workshop.herokuapp.com/users/sig",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        data: data
+        data: data,
       };
-  
+
       const response = await axios(config);
       console.log(response.data);
-
-    } catch(error) {
+    } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     setValues({
       ...values,
       [name]: value,
-    })
+    });
   };
 
   const handleSubmit = (e) => {
@@ -59,23 +58,44 @@ const Signup = (props) => {
         <Form onSubmit={(e) => handleSubmit(e)}>
           <Form.Group className="mb-3" controlId="formBasicName">
             <Form.Label>Name</Form.Label>
-            <Form.Control name="name" onChange={(e) => handleChange(e)} type="text" placeholder="Enter Name" value={values.name} required/>
+            <Form.Control
+              name="name"
+              onChange={(e) => handleChange(e)}
+              type="text"
+              placeholder="Enter Name"
+              value={values.name}
+              required
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" onChange={(e) => handleChange(e)} placeholder="Enter email" value={values.email} name="email" required/>
+            <Form.Control
+              type="email"
+              onChange={(e) => handleChange(e)}
+              placeholder="Enter email"
+              value={values.email}
+              name="email"
+              required
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" onChange={(e) => handleChange(e)} value={values.password} name="password" placeholder="Password" required/>
+            <Form.Control
+              type="password"
+              onChange={(e) => handleChange(e)}
+              value={values.password}
+              name="password"
+              placeholder="Password"
+              required
+            />
           </Form.Group>
           <Button variant="primary" type="submit">
             Submit
           </Button>
         </Form>
       </div>
-      <small>
+      <small className="mt-2 text-start container-fluid">
         Already have an account? <Link to="/">Login</Link>
       </small>
     </div>
