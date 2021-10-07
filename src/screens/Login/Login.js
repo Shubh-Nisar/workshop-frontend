@@ -45,6 +45,7 @@ const Login = (props) => {
       if (response.data.token) {
         setLoading(false);
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem('id', response.data.id);
         history.push('/blog')
       }
     } catch (error) {

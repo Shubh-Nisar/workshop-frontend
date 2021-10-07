@@ -14,7 +14,7 @@ function Appbar() {
   return (
     <Navbar bg="primary" className="Appbar" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Blogs</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/blog">Blogs</Navbar.Brand>
         {
           pathname !== '/' 
           &&

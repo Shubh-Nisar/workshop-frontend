@@ -5,13 +5,13 @@ import "./BlogCard.css";
 import Card from "react-bootstrap/Card";
 // import Button from "react-bootstrap/Button";
 
-const BlogCard = (props) => {
+const BlogCard = ({title, description}) => {
   return (
     <Card className="BlogCard-Container">
-      <Card.Header as="h5">Blog Title</Card.Header>
+      <Card.Header as="h5">{title}</Card.Header>
       <Card.Body>
-        <Card.Text>Blog Description goes here.</Card.Text>
-        <p className="BlogCard-Name">— Name</p>
+        <Card.Text>{description}</Card.Text>
+        <p className="BlogCard-Name">— Don</p>
       </Card.Body>
     </Card>
   );
