@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
+import { Spinner } from 'react-bootstrap';
 
 const Signup = (props) => {
   const [values, setValues] = useState({
@@ -13,15 +14,24 @@ const Signup = (props) => {
     email: "",
     password: "",
   });
-  // const [error, setError] = useState(' ');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState({
+    color: 'red',
+    message: '',
+  });
 
   const Register = async () => {
+    setLoading(true);
+    setMessage({
+      ...message,
+      message: '',
+    })
     try {
       const data = JSON.stringify(values);
 
       const config = {
         method: "post",
-        url: "https://simple-blog-site-workshop.herokuapp.com/users/sig",
+        url: "https://simple-blog-site-workshop.herokuapp.com/users/signup",
         headers: {
           "Content-Type": "application/json",
         },
@@ -30,8 +40,20 @@ const Signup = (props) => {
 
       const response = await axios(config);
       console.log(response.data);
+      if (response.data.createdAt) {
+        setLoading(false);
+        setMessage({
+          color: 'green',
+          message: 'account has been created, login',
+        })
+      }
     } catch (error) {
+      setLoading(false);
       console.log(error);
+      setMessage({
+        color: 'red',
+        message: 'An account of this email has already been created'
+      })
     }
   };
 
@@ -95,9 +117,15 @@ const Signup = (props) => {
           </Button>
         </Form>
       </div>
-      <small className="mt-2 text-start container-fluid">
-        Already have an account? <Link to="/">Login</Link>
-      </small>
+      <div className="flexBox loader-div">
+        <small className="mt-2 text-start container-fluid">
+          Already have an account? <Link to="/">Login</Link>
+        </small>
+        <div className="Signup-Loader flexBox">
+          {loading && <Spinner animation="border" variant="primary" />}
+          <small style={{ color: message.color, textAlign: 'center' }}>{message.message}</small>
+        </div>
+      </div>
     </div>
   );
 };
